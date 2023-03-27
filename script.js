@@ -23,3 +23,16 @@ const operations = {
 const operate = function(num1, num2, operator) {
     return operations[operator](num1, num2);
 };
+
+// --- EVENT LISTENERS ----
+
+const numberButtons = document.querySelectorAll(".number");
+
+numberButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const numericValue = button.dataset.value;
+        const display = document.querySelector("#display");
+        display.textContent += numericValue;
+        console.log(display);
+    })
+})
