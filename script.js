@@ -30,24 +30,25 @@ const operate = function(num1, num2, operator) {
 const numberButtons = document.querySelectorAll(".number");
 
 numberButtons.forEach(button => {
-    button.addEventListener("click", (event) => {
-        const numericValue = parseInt(event.target.dataset.value);
-        const display = document.querySelector("#display");
+  button.addEventListener("click", (event) => {
+    const numericValue = parseInt(event.target.dataset.value);
+    const display = document.querySelector("#display");
 
-        if (userNum1 === null) {
-            userNum1 = numericValue;
-            display.textContent = userNum1;
-        } else {
-        if (userNum2 === null) {
-            userNum2 = numericValue;
-            display.textContent = userNum2;
-        } else {
-            userNum2 += numericValue;
-            display.textContent = userNum2;
-        }
+    if (userNum1 === null) {
+      userNum1 = numericValue;
+      display.textContent = userNum1;
+    } else {
+      if (userNum2 === null) {
+        userNum2 = numericValue;
+        display.textContent = userNum2;
+      } else {
+        userNum2 += numericValue;
+        display.textContent = userNum2;
+      }
     } 
-    })
+  });
 });
+
 
 const operatorButtons = document.querySelectorAll(".operators");
 
@@ -67,7 +68,10 @@ equalsButton.addEventListener('click', (event) => {
     const clearButton = document.querySelector("#clear-btn");
 
 clearButton.addEventListener('click', (event) => {
-        const clearsButtonId = event.target.id;
+        display.textContent = '0';
+        userNum1 = null;
+        userNum2 = null;
+        userOperatorSelection = null;
     });
 
     // --- USER INPUT VARIABLES ---
