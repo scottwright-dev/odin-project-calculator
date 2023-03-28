@@ -31,7 +31,7 @@ const numberButtons = document.querySelectorAll(".number");
 
 numberButtons.forEach(button => {
     button.addEventListener("click", (event) => {
-        const numericValue = event.target.dataset.value;
+        const numericValue = parseInt(event.target.dataset.value);
         const display = document.querySelector("#display");
 
         if (userNum1 === null) {
@@ -61,7 +61,7 @@ operatorButtons.forEach(button => {
 const equalsButton = document.querySelector("#equals-btn");
 
 equalsButton.addEventListener('click', (event) => {
-        const equalsButtonId = event.target.id;
+    display.textContent =  operate(userNum1, userNum2, userOperatorSelection);
     });
 
     const clearButton = document.querySelector("#clear-btn");
