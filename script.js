@@ -25,7 +25,7 @@ const operate = function(num1, num2, operator) {
     return operations[operator](num1, num2);
 };
 
-// --- EVENT LISTENERS ----
+// --- BUTTON EVENT LISTENERS ----
 
 const numberButtons = document.querySelectorAll(".number");
 
@@ -33,7 +33,14 @@ numberButtons.forEach(button => {
     button.addEventListener("click", (event) => {
         const numericValue = event.target.dataset.value;
         const display = document.querySelector("#display");
-        display.textContent += numericValue;
+
+        if (userNum1 === null) {
+            userNum1 = numericValue;
+            display.textContent = userNum1;
+        } else {
+            userNum1 += numericValue;
+            display.textContent = userNum1;
+        }
     })
 });
 
@@ -41,8 +48,8 @@ const operatorButtons = document.querySelectorAll(".operators");
 
 operatorButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-        const operatorValue = event.target.id;
-        console.log(operatorValue);
+        userOperatorSelection = event.target.id;
+        
     })
 });
 
@@ -50,12 +57,17 @@ const equalsButton = document.querySelector("#equals-btn");
 
 equalsButton.addEventListener('click', (event) => {
         const equalsButtonId = event.target.id;
-        console.log(equalsButtonId);
     });
 
     const clearButton = document.querySelector("#clear-btn");
 
 clearButton.addEventListener('click', (event) => {
         const clearsButtonId = event.target.id;
-        console.log(clearsButtonId);
     });
+
+    // --- USER INPUT VARIABLES ---
+
+    let userNum1 = null;
+    let userNum2 = null;
+    let userOperatorSelection = null;
+
