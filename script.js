@@ -10,7 +10,7 @@ const divide = (num1, num2) => num1 / num2;
 const num1 = 0;
 const num2 = 0;
 const operator = '';
-const displayValue = 0;
+display.textContent = '0';
 
 // --- OPERATE FUNCTION ----
 
