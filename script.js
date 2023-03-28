@@ -7,8 +7,8 @@ const divide = (num1, num2) => num1 / num2;
 
 // --- INITIAL CALCULATOR VARIABLES ---
 
-const num1 = 0;
-const num2 = 0;
+const num1 = null;
+const num2 = null;
 const operator = '';
 display.textContent = '0';
 
