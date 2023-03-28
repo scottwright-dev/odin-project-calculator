@@ -10,6 +10,7 @@ const divide = (num1, num2) => num1 / num2;
 const num1 = 0;
 const num2 = 0;
 const operator = '';
+const displayValue = 0;
 
 // --- OPERATE FUNCTION ----
 
@@ -29,10 +30,32 @@ const operate = function(num1, num2, operator) {
 const numberButtons = document.querySelectorAll(".number");
 
 numberButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const numericValue = button.dataset.value;
+    button.addEventListener("click", (event) => {
+        const numericValue = event.target.dataset.value;
         const display = document.querySelector("#display");
         display.textContent += numericValue;
-        console.log(display);
     })
-})
+});
+
+const operatorButtons = document.querySelectorAll(".operators");
+
+operatorButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        const operatorValue = event.target.id;
+        console.log(operatorValue);
+    })
+});
+
+const equalsButton = document.querySelector("#equals-btn");
+
+equalsButton.addEventListener('click', (event) => {
+        const equalsButtonId = event.target.id;
+        console.log(equalsButtonId);
+    });
+
+    const clearButton = document.querySelector("#clear-btn");
+
+clearButton.addEventListener('click', (event) => {
+        const clearsButtonId = event.target.id;
+        console.log(clearsButtonId);
+    });
