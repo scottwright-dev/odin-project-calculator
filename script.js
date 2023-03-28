@@ -38,9 +38,14 @@ numberButtons.forEach(button => {
             userNum1 = numericValue;
             display.textContent = userNum1;
         } else {
-            userNum1 += numericValue;
-            display.textContent = userNum1;
+        if (userNum2 === null) {
+            userNum2 = numericValue;
+            display.textContent = userNum2;
+        } else {
+            userNum2 += numericValue;
+            display.textContent = userNum2;
         }
+    } 
     })
 });
 
