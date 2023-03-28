@@ -12,6 +12,12 @@ const num2 = 0;
 const operator = '';
 display.textContent = '0';
 
+  // --- USER INPUT VARIABLES ---
+
+  let userNum1 = null;
+  let userNum2 = null;
+  let userOperatorSelection = null;
+
 // --- OPERATE FUNCTION ----
 
 const operations = {
@@ -74,9 +80,4 @@ clearButton.addEventListener('click', (event) => {
         userOperatorSelection = null;
     });
 
-    // --- USER INPUT VARIABLES ---
-
-    let userNum1 = null;
-    let userNum2 = null;
-    let userOperatorSelection = null;
 
