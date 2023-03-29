@@ -3,6 +3,7 @@
 const add = (num1, num2) => num1 + num2;
 const subtract = (num1, num2) => num1 - num2;
 const multiply = (num1, num2) => num1 * num2;
+// Divide function includes error handling for dividing by 0.
 const divide = (num1, num2) => {
     if (num2 === 0) {
       return "Error";
@@ -10,21 +11,19 @@ const divide = (num1, num2) => {
     return num1 / num2;
   };
   
-
 // --- INITIAL CALCULATOR VARIABLES ---
 
-const num1 = null;
-const num2 = null;
 const operator = '';
 display.textContent = '0';
 
-  // --- USER INPUT VARIABLES ---
+// --- USER INPUT VARIABLES ---
 
   let userNum1 = null;
   let userNum2 = null;
   let userOperatorSelection = null;
 
 // --- OPERATE FUNCTION ----
+// Function to perform calculation operations based on the selected operator.
 
 const operations = {
     '+': add,
@@ -38,6 +37,7 @@ const operate = function(num1, num2, operator) {
 };
 
 // --- BUTTON EVENT LISTENERS ----
+// Event listeners for number and operator buttons, and equals button.
 
 const numberButtons = document.querySelectorAll(".number");
 
@@ -45,6 +45,9 @@ numberButtons.forEach(button => {
     button.addEventListener("click", (event) => {
       const numericValue = event.target.dataset.value;
       const display = document.querySelector("#display");
+
+// Handle user input for the first and second operand.
+// Update the display with the current operand value.
   
       if (userNum1 === null) {
         userNum1 = numericValue;
@@ -66,6 +69,10 @@ const operatorButtons = document.querySelectorAll(".operators");
 
 operatorButtons.forEach(button => {
     button.addEventListener('click', (event) => {
+// Check if both operands and the operator have been selected.
+// Perform the selected operation and update the display.
+// Reset the first operand to the result and clear the second operand.
+// Save the selected operator for future calculations.
       if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
         const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
         if (result === "Error") {
@@ -83,6 +90,9 @@ operatorButtons.forEach(button => {
 const equalsButton = document.querySelector("#equals-btn");
 
 equalsButton.addEventListener('click', (event) => {
+// Check if both operands and the operator have been selected.
+// Perform the selected operation and update the display.
+// Reset the first operand to the result and clear the second operand and operator.
     if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
         const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
         if (result === "Error") {
@@ -100,6 +110,7 @@ equalsButton.addEventListener('click', (event) => {
     const clearButton = document.querySelector("#clear-btn");
 
 clearButton.addEventListener('click', (event) => {
+// Clear the calculator display and reset all user input values and the selected operator.
         display.textContent = '0';
         userNum1 = null;
         userNum2 = null;
