@@ -37,7 +37,7 @@ const numberButtons = document.querySelectorAll(".number");
 
 numberButtons.forEach(button => {
   button.addEventListener("click", (event) => {
-    const numericValue = parseInt(event.target.dataset.value);
+    const numericValue = event.target.dataset.value;
     const display = document.querySelector("#display");
 
     if (userNum1 === null) {
@@ -46,10 +46,10 @@ numberButtons.forEach(button => {
     } else {
       if (userNum2 === null) {
         userNum2 = numericValue;
-        display.textContent = userNum2;
+        display.textContent = userNum1 + userNum2;
       } else {
         userNum2 += numericValue;
-        display.textContent = userNum2;
+        display.textContent = userNum1 + userNum2;
       }
     } 
   });
