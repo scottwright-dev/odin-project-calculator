@@ -46,10 +46,10 @@ numberButtons.forEach(button => {
     } else {
       if (userNum2 === null) {
         userNum2 = numericValue;
-        display.textContent = userNum1 + userNum2;
+        display.textContent = Number(userNum1) + Number(userNum2);
       } else {
         userNum2 += numericValue;
-        display.textContent = userNum1 + userNum2;
+        display.textContent = Number(userNum1) + Number(userNum2);
       }
     } 
   });
@@ -68,7 +68,7 @@ operatorButtons.forEach(button => {
 const equalsButton = document.querySelector("#equals-btn");
 
 equalsButton.addEventListener('click', (event) => {
-    display.textContent =  operate(userNum1, userNum2, userOperatorSelection);
+    display.textContent =  operate(Number(userNum1), Number(userNum2), userOperatorSelection);
     });
 
     const clearButton = document.querySelector("#clear-btn");
