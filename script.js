@@ -36,24 +36,26 @@ const operate = function(num1, num2, operator) {
 const numberButtons = document.querySelectorAll(".number");
 
 numberButtons.forEach(button => {
-  button.addEventListener("click", (event) => {
-    const numericValue = event.target.dataset.value;
-    const display = document.querySelector("#display");
-
-    if (userNum1 === null) {
-      userNum1 = numericValue;
-      display.textContent = userNum1;
-    } else {
-      if (userNum2 === null) {
+    button.addEventListener("click", (event) => {
+      const numericValue = event.target.dataset.value;
+      const display = document.querySelector("#display");
+  
+      if (userNum1 === null) {
+        userNum1 = numericValue;
+        display.textContent = userNum1;
+      } else if (userOperatorSelection === null) {
+        userNum1 += numericValue;
+        display.textContent = userNum1;
+      } else if (userNum2 === null) {
         userNum2 = numericValue;
-        display.textContent = Number(userNum1) + Number(userNum2);
+        display.textContent = userNum2;
       } else {
         userNum2 += numericValue;
-        display.textContent = Number(userNum1) + Number(userNum2);
+        display.textContent = userNum2;
       }
-    } 
+    });
   });
-});
+  
 
 
 const operatorButtons = document.querySelectorAll(".operators");
