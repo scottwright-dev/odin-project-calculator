@@ -55,23 +55,34 @@ numberButtons.forEach(button => {
       }
     });
   });
-  
-
 
 const operatorButtons = document.querySelectorAll(".operators");
 
 operatorButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-        userOperatorSelection = event.target.id;
-        
-    })
-});
+      if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
+        const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
+        display.textContent = result;
+        userNum1 = result;
+        userNum2 = null;
+      }
+      userOperatorSelection = event.target.id;
+    });
+  });
+  
 
 const equalsButton = document.querySelector("#equals-btn");
 
 equalsButton.addEventListener('click', (event) => {
-    display.textContent =  operate(Number(userNum1), Number(userNum2), userOperatorSelection);
-    });
+    if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
+      const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
+      display.textContent = result;
+      userNum1 = result;
+      userNum2 = null;
+      userOperatorSelection = null;
+    }
+  });
+  
 
     const clearButton = document.querySelector("#clear-btn");
 
