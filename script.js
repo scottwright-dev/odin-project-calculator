@@ -3,7 +3,13 @@
 const add = (num1, num2) => num1 + num2;
 const subtract = (num1, num2) => num1 - num2;
 const multiply = (num1, num2) => num1 * num2;
-const divide = (num1, num2) => num1 / num2;
+const divide = (num1, num2) => {
+    if (num2 === 0) {
+      return "Error";
+    }
+    return num1 / num2;
+  };
+  
 
 // --- INITIAL CALCULATOR VARIABLES ---
 
@@ -62,24 +68,31 @@ operatorButtons.forEach(button => {
     button.addEventListener('click', (event) => {
       if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
         const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
-        display.textContent = result;
-        userNum1 = result;
-        userNum2 = null;
+        if (result === "Error") {
+          display.textContent = "Nope";
+        } else {
+          display.textContent = result;
+          userNum1 = result;
+          userNum2 = null;
+        }
       }
       userOperatorSelection = event.target.id;
     });
   });
-  
 
 const equalsButton = document.querySelector("#equals-btn");
 
 equalsButton.addEventListener('click', (event) => {
     if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
-      const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
-      display.textContent = result;
-      userNum1 = result;
-      userNum2 = null;
-      userOperatorSelection = null;
+        const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
+        if (result === "Error") {
+          display.textContent = "Nope";
+        } else {
+          display.textContent = result;
+          userNum1 = result;
+          userNum2 = null;
+          userOperatorSelection = null;
+        }
     }
   });
   
