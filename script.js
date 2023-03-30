@@ -16,6 +16,7 @@ const divide = (num1, num2) => {
   let userNum1 = null;
   let userNum2 = null;
   let userOperatorSelection = null;
+  let equalsPressed = false; 
 
 // --- OPERATE FUNCTION ----
 // Function to perform arithmetic operations based on the selected operator.
@@ -38,6 +39,15 @@ numberButtons.forEach(button => {
     button.addEventListener("click", (event) => {
       const numericValue = event.target.dataset.value;
       const display = document.querySelector("#display");
+
+// If equalsPressed is true, reset user input variables and the display
+    if (equalsPressed) {
+        userNum1 = null;
+        userNum2 = null;
+        userOperatorSelection = null;
+        equalsPressed = false;
+        display.textContent = '';
+      }
 
       display.value += numericValue;
 
@@ -86,6 +96,7 @@ operatorButtons.forEach(button => {
 const equalsButton = document.querySelector("#equals-btn");
 
 equalsButton.addEventListener('click', (event) => {
+    equalsPressed = true;
 // Check if both operands and the operator have been selected.
 // Perform the selected operation and update the display.
 // Reset the first operand to the result and clear the second operand and operator.
