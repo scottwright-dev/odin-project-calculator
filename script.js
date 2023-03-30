@@ -27,9 +27,7 @@ const operations = {
     '/': divide
 };
 
-const operate = function(num1, num2, operator) {
-    return operations[operator](num1, num2);
-};
+const operate = (num1, num2, operator) => operations[operator](num1, num2);
 
 // --- BUTTON EVENT LISTENERS ----
 // Event listeners for number and operator buttons, and equals button.
