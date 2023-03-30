@@ -10,11 +10,6 @@ const divide = (num1, num2) => {
     }
     return num1 / num2;
   };
-  
-// --- INITIAL CALCULATOR VARIABLES ---
-
-const operator = '';
-display.textContent = '0';
 
 // --- USER INPUT VARIABLES ---
 
@@ -23,7 +18,7 @@ display.textContent = '0';
   let userOperatorSelection = null;
 
 // --- OPERATE FUNCTION ----
-// Function to perform calculation operations based on the selected operator.
+// Function to perform arithmetic operations based on the selected operator.
 
 const operations = {
     '+': add,
