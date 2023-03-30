@@ -112,4 +112,25 @@ clearButton.addEventListener('click', (event) => {
         userOperatorSelection = null;
     });
 
+const decimalButton = document.querySelector("#decimal-btn");
 
+decimalButton.addEventListener('click', (event) => {
+        if (userOperatorSelection === null) {
+            if (userNum1 === null) {
+                userNum1 = '0.';
+                display.textContent = userNum1;
+            } else if (!userNum1.includes('.')) {
+                userNum1 += '.';
+                display.textContent = userNum1;
+            }
+        } else {
+            if (userNum2 === null) {
+                userNum2 = '0.';
+                display.textContent = userNum2;
+            } else if (!userNum2.includes('.')) {
+                userNum2 += '.';
+                display.textContent = userNum2;
+            }
+        }
+    });
+    
