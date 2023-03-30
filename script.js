@@ -144,4 +144,28 @@ decimalButton.addEventListener('click', (event) => {
             }
         }
     });
+
+const deleteButton = document.querySelector("#delete-btn");
+
+deleteButton.addEventListener("click", (event) => {
+  if (userNum2 !== null) {
+    userNum2 = userNum2.slice(0, -1);
+    if (userNum2 === "") {
+      display.textContent = "0";
+    } else {
+      display.textContent = userNum2;
+    }
+  } else if (userOperatorSelection !== null) {
+    userOperatorSelection = null;
+    display.textContent = userNum1;
+  } else if (userNum1 !== null) {
+    userNum1 = userNum1.slice(0, -1);
+    if (userNum1 === "") {
+      display.textContent = "0";
+    } else {
+      display.textContent = userNum1;
+    }
+  }
+});
+
     
