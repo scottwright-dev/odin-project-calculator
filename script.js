@@ -39,6 +39,8 @@ numberButtons.forEach(button => {
       const numericValue = event.target.dataset.value;
       const display = document.querySelector("#display");
 
+      display.value += numericValue;
+
 // Handle user input for the first and second operand.
 // Update the display with the current operand value.
   
@@ -76,6 +78,7 @@ operatorButtons.forEach(button => {
           userNum2 = null;
         }
       }
+// Set the value of userOperatorSelection to the ID of the clicked operator button
       userOperatorSelection = event.target.id;
     });
   });
@@ -99,8 +102,7 @@ equalsButton.addEventListener('click', (event) => {
     }
   });
   
-
-    const clearButton = document.querySelector("#clear-btn");
+const clearButton = document.querySelector("#clear-btn");
 
 clearButton.addEventListener('click', (event) => {
 // Clear the calculator display and reset all user input values and the selected operator.
