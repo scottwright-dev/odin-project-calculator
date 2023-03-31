@@ -22,10 +22,10 @@ const divide = (num1, num2) => {
 // Function to perform arithmetic operations based on the selected operator.
 
 const operations = {
-    '+': add,
-    '-': subtract,
-    '*': multiply,
-    '/': divide
+    'plus': add,
+    'minus': subtract,
+    'multiply': multiply,
+    'divide': divide
 };
 
 const operate = (num1, num2, operator) => operations[operator](num1, num2);
@@ -49,7 +49,7 @@ numberButtons.forEach(button => {
         display.textContent = '';
       }
 
-      display.value += numericValue;
+      display.textContent += numericValue;
 
 // Handle user input for the first and second operand.
 // Update the display with the current operand value.
