@@ -5,42 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Calculator</title>
   </head>
   <body>
     <div id="calculator-container">
-      <div class="numbers">
-        <button class="number" data-value="0">0</button>
-        <button class="number" data-value="1">1</button>
-        <button class="number" data-value="2">2</button>
-        <button class="number" data-value="3">3</button>
-        <button class="number" data-value="4">4</button>
-        <button class="number" data-value="5">5</button>
-        <button class="number" data-value="6">6</button>
+        <div id="display">0</div>
+        <button id="clear-btn">CLEAR</button>
+        <button id="delete-btn">DEL</button>
+        <button class="operators" id="divide">/</button>
+
         <button class="number" data-value="7">7</button>
         <button class="number" data-value="8">8</button>
         <button class="number" data-value="9">9</button>
-      </div>
-      <div class="operators">
-        <button id="+">+</button>
-        <button id="-">-</button>
-        <button id="*">*</button>
-        <button id="/">/</button>
-      </div>
-      <div class="equals">
-        <button id="equals-btn">=</button>
-      </div>
-      <div class="clear">
-        <button id="clear-btn">CLEAR</button>
-      </div>
-      <div class="decimal">
+        <button class="operators" id="multiply">*</button>
+
+        <button class="number" data-value="4">4</button>
+        <button class="number" data-value="5">5</button>
+        <button class="number" data-value="6">6</button>
+        <button class="operators" id="minus">-</button>
+
+        <button class="number" data-value="1">1</button>
+        <button class="number" data-value="2">2</button>
+        <button class="number" data-value="3">3</button>
+        <button class="operators" id="plus">+</button>
+
+        <button class="number" data-value="0">0</button> 
         <button id="decimal-btn">.</button>
-      </div>
-      <div class="delete">
-        <button id="delete-btn">DEL</button>
-      </div>
-      <div id="display">0</div>   
+        <button id="equals-btn">=</button>
+        
     </div>
   </body>
 </html>
