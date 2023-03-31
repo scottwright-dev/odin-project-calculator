@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Calculator</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="calculator-container">
-        <div class="numbers">
-          <button id="0">0</button>
-          <button id="1">1</button>
-          <button id="2">2</button>
-          <button id="3">3</button>
-          <button id="4">4</button>
-          <button id="5">5</button>
-          <button id="6">6</button>
-          <button id="7">7</button>
-          <button id="8">8</button>
-          <button id="9">9</button>
-        </div>
-        <div class="operators">
-          <button id="+">+</button>
-          <button id="-">-</button>
-          <button id="*">*</button>
-          <button id="/">/</button>
-        </div>
-        <div class="equals">
-          <button id="equals-btn">=</button>
-        </div>
-        <div class="clear">
-            <button id="clear-btn">CLEAR</button>
-        <div id="display">123456789</div>
-          </div>
+      <div class="numbers">
+        <button class="number" data-value="0">0</button>
+        <button class="number" data-value="1">1</button>
+        <button class="number" data-value="2">2</button>
+        <button class="number" data-value="3">3</button>
+        <button class="number" data-value="4">4</button>
+        <button class="number" data-value="5">5</button>
+        <button class="number" data-value="6">6</button>
+        <button class="number" data-value="7">7</button>
+        <button class="number" data-value="8">8</button>
+        <button class="number" data-value="9">9</button>
+      </div>
+      <div class="operators">
+        <button id="+">+</button>
+        <button id="-">-</button>
+        <button id="*">*</button>
+        <button id="/">/</button>
+      </div>
+      <div class="equals">
+        <button id="equals-btn">=</button>
+      </div>
+      <div class="clear">
+        <button id="clear-btn">CLEAR</button>
+      </div>
+      <div class="decimal">
+        <button id="decimal-btn">.</button>
+      </div>
+      <div class="delete">
+        <button id="delete-btn">DEL</button>
+      </div>
+      <div id="display">0</div>   
     </div>
-</body>
+  </body>
 </html>
