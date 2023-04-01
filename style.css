@@ -145,13 +145,16 @@ body {
     transition: transform 0.5s ease-in-out;
     color: #171435;
   }
-  
-  
+
   .github-icon:hover {
-    transform: rotate(360deg);
+    animation: spinning-coin 1s linear;
   }
   
-  
-  
-  
-  
+  @keyframes spinning-coin {
+    0% {
+      transform: perspective(400px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(400px) rotateY(1turn);
+    }
+  }
