@@ -130,7 +130,7 @@ body {
     gap: 10px;
     width: 100%;
     padding: 10px;
-    color: var(--primary-light);
+    color: #171435;
     font-size: 20px;
   }
   
@@ -143,11 +143,12 @@ body {
     width: 24px;
     height: 24px;
     transition: transform 0.5s ease-in-out;
+    color: #171435;
   }
   
   
   .github-icon:hover {
-    transform: rotate(360deg) scale(1.2);
+    transform: rotate(360deg);
   }
   
   
