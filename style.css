@@ -142,7 +142,6 @@ body {
     display: inline-block;
     width: 24px;
     height: 24px;
-    transition: transform 0.5s ease-in-out;
     color: #171435;
   }
 
