@@ -1,0 +1,159 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+body {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+#calculator-container {
+    display: grid; 
+    padding: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        "display display display display"
+        "clear-btn clear-btn delete-btn divide"
+        "seven eight nine multi"
+        "four five six minus"
+        "one two three plus"
+        "zero decimal equals equals";
+    grid-gap: 5px;
+    justify-content: center;
+    background-color: #171435;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+}
+
+#display,
+#clear-btn,
+#delete-btn,
+.operators {
+    background-color: #8F8AC0;
+    color: #171435;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.number,
+#decimal-btn {
+    background-color: #D6D4E8;
+    color: #171435;
+    font-size: 2rem;
+    border: none;
+    border-radius: 15px;
+}
+
+#display {
+    grid-area: display;
+    background-color: #D6D4E8;
+    font-size: 2.5rem;
+    text-align: right;
+    padding-right: .25em;
+}
+
+#clear-btn {
+    grid-column: span 2;
+    grid-area: clear-btn;
+}
+
+
+#delete-btn {
+    grid-column: span 1;
+    grid-area: delete-btn;
+}
+
+#divide {
+    grid-column: span 1;
+    grid-area: divide;
+}
+
+#multiply {
+    grid-column: span 1;
+    grid-area: multi;
+}
+
+#minus {
+    grid-column: span 1;
+    grid-area: minus;
+}
+
+#plus {
+    grid-column: span 1;
+    grid-area: plus;
+
+}
+
+#clear-btn:hover,
+#delete-btn:hover,
+.number:hover,
+.operators:hover,
+#equals-btn:hover,
+#decimal-btn:hover {
+    opacity: 0.8;
+}
+
+#decimal-btn {
+    grid-area: decimal;
+}
+
+#equals-btn {
+    grid-area: equals;
+    grid-column: span 2;
+    background-color: #F62F63;
+    color: #171435;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    color: #171435;
+    font-size: 20px;
+  }
+  
+  .github-icon {
+    background-image: url('/github-icon.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    color: #171435;
+  }
+
+  .github-icon:hover {
+    animation: spinning-coin 1s linear;
+  }
+  
+  @keyframes spinning-coin {
+    0% {
+      transform: perspective(400px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(400px) rotateY(1turn);
+    }
+  }
