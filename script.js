@@ -29,9 +29,13 @@ const operations = {
 };
 
 const operate = (num1, num2, operator) => {
-    const result = operations[operator](num1, num2);
-    return Number(result.toFixed(8));
+  const result = operations[operator](num1, num2);
+  if (result === "Error") {
+      return result;
+  }
+  return Number(result.toFixed(8));
 };
+
 
 
 // --- BUTTON EVENT LISTENERS ----
@@ -43,6 +47,11 @@ numberButtons.forEach(button => {
     button.addEventListener("click", (event) => {
       const numericValue = event.target.dataset.value;
       const display = document.querySelector("#display");
+
+// Limit input to 9 digits
+    if (display.textContent.length >= 9) {
+        return;
+        }
 
 // If equalsPressed is true, reset user input variables and the display
     if (equalsPressed) {
@@ -87,7 +96,8 @@ operatorButtons.forEach(button => {
         if (result === "Error") {
           display.textContent = "Nope";
         } else {
-          display.textContent = result;
+// this stops display overflow issue
+          display.textContent = String(result).slice(0, 9);
           userNum1 = result;
           userNum2 = null;
         }
@@ -102,15 +112,15 @@ const equalsButton = document.querySelector("#equals-btn");
 equalsButton.addEventListener('click', (event) => {
     equalsPressed = true;
     if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
-        const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
-        if (result === "Error") {
+      const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
+      if (result === "Error") {
           display.textContent = "Nope";
-        } else {
-          display.textContent = Number(result.toFixed(8));
+      } else {
+          display.textContent = String(Number(result.toFixed(8))).slice(0, 9);
           userNum1 = Number(result.toFixed(8));
           userNum2 = null;
           userOperatorSelection = null;
-        }
+      }
     }
 });
   
