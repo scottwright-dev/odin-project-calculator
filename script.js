@@ -31,12 +31,12 @@ const operations = {
 const operate = (num1, num2, operator) => {
   const result = operations[operator](num1, num2);
   if (result === "Error") {
-      return result;
+    return result;
   }
-  return Number(result.toFixed(8));
+  // Round the result to fit within 9 digits for display purposes
+  const maxPrecision = 9 - Math.floor(Math.log10(Math.abs(result))) - 1;
+  return Number(result.toFixed(Math.max(0, maxPrecision)));
 };
-
-
 
 // --- BUTTON EVENT LISTENERS ----
 // Event listeners for number and operator buttons, and equals button.
