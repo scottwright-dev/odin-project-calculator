@@ -28,7 +28,11 @@ const operations = {
     'divide': divide
 };
 
-const operate = (num1, num2, operator) => operations[operator](num1, num2);
+const operate = (num1, num2, operator) => {
+    const result = operations[operator](num1, num2);
+    return Number(result.toFixed(8));
+};
+
 
 // --- BUTTON EVENT LISTENERS ----
 // Event listeners for number and operator buttons, and equals button.
@@ -97,21 +101,18 @@ const equalsButton = document.querySelector("#equals-btn");
 
 equalsButton.addEventListener('click', (event) => {
     equalsPressed = true;
-// Check if both operands and the operator have been selected.
-// Perform the selected operation and update the display.
-// Reset the first operand to the result and clear the second operand and operator.
     if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
         const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
         if (result === "Error") {
           display.textContent = "Nope";
         } else {
-          display.textContent = result;
-          userNum1 = result;
+          display.textContent = Number(result.toFixed(8));
+          userNum1 = Number(result.toFixed(8));
           userNum2 = null;
           userOperatorSelection = null;
         }
     }
-  });
+});
   
 const clearButton = document.querySelector("#clear-btn");
 
