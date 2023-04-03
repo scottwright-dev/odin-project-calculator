@@ -86,26 +86,33 @@ numberButtons.forEach(button => {
 const operatorButtons = document.querySelectorAll(".operators");
 
 operatorButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-// Check if both operands and the operator have been selected.
-// Perform the selected operation and update the display.
-// Reset the first operand to the result and clear the second operand.
-// Save the selected operator for future calculations.
-      if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
-        const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
-        if (result === "Error") {
-          display.textContent = "Nope";
-        } else {
-// this stops display overflow issue
-          display.textContent = String(result).slice(0, 9);
-          userNum1 = result;
-          userNum2 = null;
-        }
+  button.addEventListener('click', (event) => {
+
+      // If equalsPressed is true, reset the equalsPressed flag
+      if (equalsPressed) {
+        equalsPressed = false;
       }
-// Set the value of userOperatorSelection to the ID of the clicked operator button
+
+      // Check if both operands and the operator have been selected.
+      // Perform the selected operation and update the display.
+      // Reset the first operand to the result and clear the second operand.
+      // Save the selected operator for future calculations.
+      if (userNum1 !== null && userNum2 !== null && userOperatorSelection !== null) {
+          const result = operate(Number(userNum1), Number(userNum2), userOperatorSelection);
+          if (result === "Error") {
+              display.textContent = "Nope";
+          } else {
+              // this stops display overflow issue
+              display.textContent = String(result).slice(0, 9);
+              userNum1 = result;
+              userNum2 = null;
+          }
+      }
+      // Set the value of userOperatorSelection to the ID of the clicked operator button
       userOperatorSelection = event.target.id;
-    });
   });
+});
+
 
 const equalsButton = document.querySelector("#equals-btn");
 
