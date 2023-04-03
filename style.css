@@ -138,18 +138,17 @@ body {
   }
   
   .github-icon {
-    background-image: url('github-icon.png');
+    background-image: url('github-icon.svg'); 
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px;
-    color: #a4e518;
   }
 
   .github-icon:hover {
-    animation: spinning-coin 1s linear;
+    animation: spinning-coin 0.5s linear;
   }
   
   @keyframes spinning-coin {
