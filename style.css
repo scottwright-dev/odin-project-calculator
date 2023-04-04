@@ -37,8 +37,8 @@ body {
     border-radius: 15px;
 }
 
-#clear-btn, #delete-btn, #divide {
-    margin-top: 0.3125rem; 
+#display {
+    margin-bottom: 0.3125rem; 
 }
 
 #display,
