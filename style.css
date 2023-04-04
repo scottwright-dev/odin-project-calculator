@@ -27,7 +27,8 @@ body {
         "four five six minus"
         "one two three plus"
         "zero decimal equals equals";
-    grid-gap: 0.3125rem;
+    grid-row-gap: 0.3125rem;
+    grid-column-gap: 0.3125rem;
     justify-content: center;
     background-color: #171435;
     margin: 0 auto;
@@ -36,7 +37,9 @@ body {
     border-radius: 15px;
 }
 
-
+#clear-btn, #delete-btn, #divide {
+    margin-top: 0.3125rem; 
+}
 
 #display,
 #clear-btn,
