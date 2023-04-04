@@ -1,5 +1,7 @@
 # Calculator #
 
+[![image of the calculator design](https://user-images.githubusercontent.com/108872957/229802576-64770da1-6cda-42de-bda8-053ff0b1efe4.png)](https://scottwright-dev.github.io/odin-project-calculator/)
+
 ### [CLICK HERE FOR DEMO](https://scottwright-dev.github.io/odin-project-calculator/) ###
 
 ### Description
